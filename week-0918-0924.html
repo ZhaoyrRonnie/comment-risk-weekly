@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<title>集评审核风险周报 · 2026.09.18–09.24</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f5f6f8;--card:#fff;--line:#e3e6ea;--txt:#1a1d21;--sub:#666e7a;
+  --red:#d92d20;--red-bg:#fef3f2;--green:#067647;--green-bg:#ecfdf3;
+  --blue:#175cd3;--blue-bg:#eff8ff;--amber:#b54708;--amber-bg:#fffaeb;
+  --violet:#6941c6;--violet-bg:#f9f5ff;}
+body{background:var(--bg);color:var(--txt);
+ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+ line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:40px 24px 80px}
+header{margin-bottom:26px}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:10px}
+h1{font-size:34px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.sub{color:var(--sub);font-size:14px;margin-top:10px}
+.meta-line{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:12px;color:var(--sub)}
+.chip.ok{background:var(--green-bg);border-color:#abefc6;color:var(--green);font-weight:650}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:26px 0 8px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.kpi .k{font-size:12px;color:var(--sub);font-weight:600;margin-bottom:8px}
+.kpi .v{font-size:28px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.kpi .d{font-size:12px;margin-top:7px;color:var(--sub)}
+.kpi.hot{background:linear-gradient(180deg,#fff 0%,var(--red-bg) 100%);border-color:#fda29b}
+.kpi.hot .v{color:var(--red)}
+.kpi.good .v{color:var(--green)}
+.kpi.blue .v{color:var(--blue)}
+section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 28px;margin-top:18px}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+.sec-n{font-size:12px;font-weight:800;color:var(--blue);letter-spacing:.08em}
+h2{font-size:20px;font-weight:750;letter-spacing:-.01em}
+.sec-sub{color:var(--sub);font-size:13.5px;margin-bottom:18px}
+h3{font-size:14px;font-weight:700;margin:24px 0 10px}
+.verdict{background:var(--blue-bg);border-left:3px solid var(--blue);border-radius:0 8px 8px 0;padding:14px 18px;font-size:14px;margin:16px 0 4px}
+.verdict b{color:var(--blue)}
+.warn{background:var(--amber-bg);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:16px 18px;font-size:13.5px}
+.warn ul{margin:8px 0 0 18px} .warn li{margin:5px 0}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+th{text-align:right;font-weight:700;color:var(--sub);font-size:11.5px;letter-spacing:.04em;padding:9px 10px;border-bottom:1.5px solid var(--line);white-space:nowrap}
+th:first-child{text-align:left}
+td{padding:9px 10px;border-bottom:1px solid #f0f2f4}
+tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#fafbfc}
+.tl{text-align:left}
+.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.hi{font-weight:750}
+.up{color:var(--red);font-weight:700} .down{color:var(--green);font-weight:700} .flat{color:var(--sub)}
+.tag-new{display:inline-block;background:var(--violet-bg);color:var(--violet);font-size:10px;font-weight:700;padding:1px 6px;border-radius:4px;vertical-align:1px}
+.scroll{max-height:520px;overflow-y:auto;border:1px solid var(--line);border-radius:10px;margin-top:10px}
+.scroll table{margin:0}
+.scroll th{position:sticky;top:0;background:#fbfcfd;z-index:2}
+.barrow{display:grid;grid-template-columns:70px 1fr;gap:14px;align-items:center;margin:9px 0}
+.barlab{font-size:13px;font-weight:650}
+.bartrack{display:flex;flex-direction:column;gap:3px}
+.bar{height:20px;border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:7px;min-width:2px}
+.bar span{font-size:11px;font-weight:700;font-variant-numeric:tabular-nums}
+.b-prev{background:#dfe4ea;color:#4a5260}
+.b-curr{background:linear-gradient(90deg,#f04438,#d92d20);color:#fff}
+.charts{display:flex;gap:40px;align-items:flex-end;justify-content:center;padding:22px 0 6px;flex-wrap:wrap}
+.tcol,.acol{display:flex;flex-direction:column;align-items:center;width:112px}
+.tbar{width:64px;border-radius:6px 6px 0 0;background:linear-gradient(180deg,#f97066,#d92d20)}
+.tcol:first-child .tbar{background:linear-gradient(180deg,#cfd6de,#98a2b3)}
+.tcol:nth-child(2) .tbar{background:linear-gradient(180deg,#fdba74,#f79009)}
+.tval{font-size:15px;font-weight:800;margin-bottom:8px;font-variant-numeric:tabular-nums}
+.tlab{font-size:11.5px;color:var(--sub);margin-top:9px;text-align:center}
+.abar{width:52px;border-radius:6px}
+.a-base{background:#98a2b3} .a-new{background:#d92d20}
+.a-grow{background:#f79009} .a-total{background:#175cd3}
+.aval{font-size:14px;font-weight:800;margin-bottom:8px;font-variant-numeric:tabular-nums}
+.alab{font-size:11.5px;color:var(--sub);margin-top:9px;text-align:center}
+.legend{display:flex;gap:20px;justify-content:center;font-size:11.5px;color:var(--sub);margin-top:6px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px}
+ol.acts{margin:14px 0 0;padding-left:0;list-style:none;counter-reset:a}
+ol.acts li{counter-increment:a;position:relative;padding:13px 0 13px 44px;border-bottom:1px dashed var(--line);font-size:13.5px}
+ol.acts li:last-child{border-bottom:none}
+ol.acts li::before{content:counter(a);position:absolute;left:0;top:13px;width:26px;height:26px;background:var(--blue);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:800}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media(max-width:860px){.kpis{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:36px}
+</style>
+<style>
+.wknav{position:sticky;top:0;z-index:99;background:rgba(255,255,255,.94);
+ -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid #e3e6ea}
+.wknav-inner{max-width:1180px;margin:0 auto;padding:11px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.wknav-brand{font-size:13px;font-weight:800;letter-spacing:-.01em;color:#1a1d21;white-space:nowrap}
+.wknav-brand em{font-style:normal;color:#175cd3}
+.wknav-tabs{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap}
+.wk-tab{display:block;padding:7px 14px;border:1px solid #e3e6ea;border-radius:10px;background:#fff;
+ text-decoration:none;color:#1a1d21;line-height:1.3;transition:all .14s}
+.wk-tab:hover{border-color:#175cd3;background:#f7faff}
+.wk-tab.on{background:#175cd3;border-color:#175cd3;color:#fff;box-shadow:0 2px 8px rgba(23,92,211,.24)}
+.wk-tab .t{display:block;font-size:12.5px;font-weight:750;font-variant-numeric:tabular-nums}
+.wk-tab .d{display:block;font-size:10.5px;color:#666e7a;margin-top:1px}
+.wk-tab.on .d{color:#cfe1ff}
+.wk-badge{display:inline-block;font-size:9.5px;font-weight:800;padding:1px 5px;border-radius:4px;
+ background:#ecfdf3;color:#067647;margin-left:6px;vertical-align:1px}
+.wk-tab.on .wk-badge{background:rgba(255,255,255,.24);color:#fff}
+@media(max-width:880px){.wknav-tabs{margin-left:0;width:100%}.wk-tab{flex:1;text-align:center}}
+</style>
+</head>
+<body>
+<div class="wknav"><div class="wknav-inner"><div class="wknav-brand">DramaBox <em>·</em> 集评审核风险周报</div><div class="wknav-tabs"><a class="wk-tab" href="index.html"><span class="t">10.02–10.08<span class="wk-badge">最新</span></span><span class="d">11,875 条 · 拒绝率 7.30%</span></a><a class="wk-tab" href="week-0925-1001.html"><span class="t">9.25–10.01</span><span class="d">7,880 条 · 拒绝率 4.81%</span></a><a class="wk-tab on" href="week-0918-0924.html"><span class="t">9.18–9.24</span><span class="d">9,814 条 · 拒绝率 7.22%</span></a><a class="wk-tab" href="week-0911-0917.html"><span class="t">9.11–9.17</span><span class="d">6,517 条 · 拒绝率 6.64%</span></a><a class="wk-tab" href="week-0904-0910.html"><span class="t">9.04–9.10</span><span class="d">1,611 条 · 拒绝率 2.20%</span></a><a class="wk-tab" href="week-0828-0903.html"><span class="t">8.28–9.03</span><span class="d">1,032 条 · 拒绝率 未知</span></a></div></div></div>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">DramaBox · 内容审核周报 · 历史周 · 09.18–09.24</div>
+  <h1>集评审核风险分析</h1>
+  <div class="sub">2026.09.18–09.24　对比　2026.09.11–09.17　·　天净 · 文本风险原因排行（渠道：评论）</div>
+  <div class="meta-line">
+    <span class="chip ok">✓ 两周渠道口径一致（评论）</span>
+    <span class="chip">拒绝总数 9,814 条</span>
+    <span class="chip">集评总量 136,000 条 · 拒绝率 7.22%</span>
+    <span class="chip">三级标签 89 个</span>
+    <span class="chip">09.11 提高审核风险标准后无新增改动</span>
+  </div>
+</header>
+
+<div class="kpis">
+  <div class="kpi">
+    <div class="k">本周拒绝总数</div><div class="v">9,814</div>
+    <div class="d">上周 6,517　<span class="up">▲ +50.6%</span></div>
+  </div>
+  <div class="kpi blue">
+    <div class="k">存量类目变化</div><div class="v">+49.9%</div>
+    <div class="d">6,517 → 9,770，贡献 <b>98.7%</b> 增量</div>
+  </div>
+  <div class="kpi good">
+    <div class="k">新增拦截面贡献</div><div class="v">0.4%</div>
+    <div class="d">仅 21 个新标签、44 条，<b>策略未扩容</b></div>
+  </div>
+  <div class="kpi">
+    <div class="k">本周拒绝率</div><div class="v">7.22%</div>
+    <div class="d">盘量 136,000 条，较上周上升 0.58 个百分点</div>
+  </div>
+</div>
+
+<section>
+  <div class="sec-h"><span class="sec-n">00</span><h2>数据口径说明</h2></div>
+  <div class="sec-sub">六周同口径（评论），可直接对比；本页为 9.18–9.24 完整导出，替换此前 9.18–9.23 版本</div>
+  <div class="warn">
+    <b>需先说明：</b>
+    <ul>
+      
+      <li><b>本页口径更新</b>：同一区间改用 <b>9.18–9.24 的完整导出</b>（拒绝 <b>9,814</b> 条），
+        替代此前基于 9.18–9.23 导出的 8,299 条。两次导出的三级标签数不同（84 → 89 个），
+        同日重导数值也会上升，属<b>导出完整性差异</b>；全站六周统一使用本版本，此前页面的旧数字不再引用。</li>
+      <li><b>周期完整</b>：本周为完整 7 天（周五→周四），与上周、下周天数一致，<b>环比可直接比绝对值</b>，
+        不需要日均换算。</li>
+      <li><b>标签体系</b>：三级标签由上周 <b>80 个</b> 变为本周 <b>89 个</b>，
+        新增拦截面（上周 = 0）共 <b>21 个标签、44 条</b>，
+        占本周拒绝量 <b>0.4%</b>、贡献增量 <b>1.3%</b>——
+        <b>09.11 策略之后无词库/阈值改动，新增面始终是尾部高敏类目，不构成拦截面扩张</b>。</li>
+      <li><b>盘量口径</b>：本周集评总量 <b>136,000</b> 条，拒绝率 <b>7.22%</b>
+        （上周 98,201 条 / 6.64%）。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="sec-h"><span class="sec-n">01</span><h2>整体概览：六周走势定位</h2></div>
+  <div class="sec-sub">拒绝 6,517 → 9,814（+50.6%），拒绝率 6.64% → 7.22%；涨幅仍由存量类目驱动，且盘量同步涨 38.5%</div>
+  <div class="charts"><div class="tcol"><div class="tval" style="color:#667085">1,032</div><div class="tbar" style="height:17px;background:#98a2b3"></div><div class="tlab" style="font-weight:500">8.28–9.03</div></div>
+<div class="tcol"><div class="tval" style="color:#667085">1,611</div><div class="tbar" style="height:27px;background:#98a2b3"></div><div class="tlab" style="font-weight:500">9.04–9.10</div></div>
+<div class="tcol"><div class="tval" style="color:#667085">6,517</div><div class="tbar" style="height:110px;background:#d92d20"></div><div class="tlab" style="font-weight:500">9.11–9.17</div></div>
+<div class="tcol"><div class="tval" style="color:#667085">9,814</div><div class="tbar" style="height:165px;background:#98a2b3"></div><div class="tlab" style="font-weight:500">9.18–9.24</div></div>
+<div class="tcol"><div class="tval" style="color:#667085">7,880</div><div class="tbar" style="height:133px;background:#98a2b3"></div><div class="tlab" style="font-weight:500">9.25–10.01</div></div>
+<div class="tcol"><div class="tval" style="color:#175cd3">11,875</div><div class="tbar" style="height:200px;background:#175cd3"></div><div class="tlab" style="font-weight:800">10.02–10.08</div></div></div>
+  <div class="legend">
+    <span><i style="background:#98a2b3"></i>其他周</span>
+    <span><i style="background:#d92d20"></i>09.11 策略上线周</span>
+    <span><i style="background:#175cd3"></i>本周</span>
+  </div>
+  <h3>六周拒绝数与拒绝率</h3>
+  <table>
+    <thead><tr><th>周次</th><th>拒绝数</th><th>盘量</th><th>拒绝率</th><th>环比</th></tr></thead>
+    <tbody><tr><td class="tl"><b>8.28–9.03</b></td><td class="n hi">1,032</td><td class="n">未知</td><td class="n">未知</td><td class="n">—</td></tr>
+<tr><td class="tl"><b>9.04–9.10</b></td><td class="n hi">1,611</td><td class="n">73,381</td><td class="n">2.20%</td><td class="n"><span class="up">+56.1%</span></td></tr>
+<tr><td class="tl"><b>9.11–9.17</b></td><td class="n hi">6,517</td><td class="n">98,201</td><td class="n">6.64%</td><td class="n"><span class="up">+304.5%</span></td></tr>
+<tr style="background:#f5f8ff"><td class="tl"><b>9.18–9.24</b></td><td class="n hi">9,814</td><td class="n">136,000</td><td class="n">7.22%</td><td class="n"><span class="up">+50.6%</span></td></tr>
+<tr><td class="tl"><b>9.25–10.01</b></td><td class="n hi">7,880</td><td class="n">163,800</td><td class="n">4.81%</td><td class="n"><span class="down">-19.7%</span></td></tr>
+<tr><td class="tl"><b>10.02–10.08</b></td><td class="n hi">11,875</td><td class="n">162,700</td><td class="n">7.30%</td><td class="n"><span class="up">+50.7%</span></td></tr></tbody>
+  </table>
+  <div class="verdict">
+    <b>结论：</b>拒绝数走势 1,032 → 1,611 → 6,517 → <b>9,814</b>。
+    环比节奏：+56.1% → <b>+304.5%（09.11 策略）</b> → <b>+50.6%</b>。
+    09.11 策略扩容的一次性效应已完全消化，本周增量 <b>98.7%</b>
+    来自存量类目，新增拦截面只在 21 个尾部标签上贡献 44 条。
+    <b>同期盘量从 98,201 涨到 136,000（+38.5%），拒绝率只上浮 0.58 个百分点</b>——
+    拒绝数的增长主要由盘子变大驱动，而不是审核尺度收紧。
+  </div>
+</section>
+
+<section>
+  <div class="sec-h"><span class="sec-n">02</span><h2>本周需关注的策略与数据事项</h2></div>
+  <div class="sec-sub">无新增策略改动；本周需关注事项：两项异常增幅、一项误杀复核、一条持续上升线、一项配置确认</div>
+  <table>
+    <thead><tr><th>关注事项</th><th>分类</th><th>状态</th><th>数据影响与建议</th></tr></thead>
+    <tbody>
+      <tr><td class="tl"><b>数美风险审核策略</b><br><span style="font-size:11.5px;color:var(--sub)">09.11 生效，无新增改动</span></td><td class="tl">策略背景</td><td class="tl"><span class="flat">稳态生效</span></td><td class="tl">本周不再叠加新策略效应：新增拦截面贡献仅 1.3%，存量类目 +49.9% 是盘量上涨背景下的同步扩张</td></tr>
+      <tr><td class="tl"><b>「涉政:涉政」异常增幅</b></td><td class="tl">数据异常</td><td class="tl"><span class="up">需核查 24h</span></td><td class="tl">85 → <b>316</b>（+271.8%），本周相对增幅最高的二级类目；需确认是<b>时政词条集中命中</b>还是<b>阈值调整</b></td></tr>
+      <tr><td class="tl"><b>「广告:联系方式:网址」回升</b></td><td class="tl">数据异常</td><td class="tl"><span class="up">需查来源 48h</span></td><td class="tl">20 → <b>62</b>（+210.0%），从基线 25 回升，疑似新增词条命中，<b>需查词条来源</b></td></tr>
+      <tr><td class="tl"><b>轻度类目误杀复核</b></td><td class="tl">数据事项</td><td class="tl"><span class="flat">建议抽检</span></td><td class="tl">轻度不文明 2,275 + 轻度人身攻击 2,213 + 口头禅 827 + 智力素质辱骂 736，合计 <b>6,051 条</b>（占本周 61.7%），贴判定边界，建议抽 200 条人工复核</td></tr>
+      <tr><td class="tl"><b>「色情:性骚扰:重度性骚扰」持续上行</b></td><td class="tl">数据事项</td><td class="tl"><span class="up">持续跟踪</span></td><td class="tl">809 → <b>1,131</b>（+39.8%）；六周连线 <b>347 → 571 → 809 → 1,131，累计 +226%</b>，与策略无关的真实上升线</td></tr>
+      <tr><td class="tl"><b>「违禁:版权IP名称」挂载确认</b></td><td class="tl">策略配置</td><td class="tl"><span class="flat">待技术确认</span></td><td class="tl">连续多周拦截为 <b>0</b>，疑似策略未挂载或无命中，需技术团队确认配置是否生效</td></tr>
+    </tbody>
+  </table>
+  <div class="verdict" style="margin-top:16px">
+    <b>结论：</b>本周无策略改动，需关注事项集中在数据侧：涉政:涉政与联系方式:网址两项相对增幅超 200%，轻度类目合计 6,051 条（占 61.7%）误杀抽检必须跟上，重度性骚扰六周累计 +226%。
+  </div>
+</section>
+
+<section>
+  <div class="sec-h"><span class="sec-n">03</span><h2>一级标签拒绝量变化</h2></div>
+  <div class="sec-sub">五大类目全面上浮，方向一致、幅度接近，涉政相对增幅最高（+122.7%）</div>
+  <div class="barrow"><div class="barlab">辱骂</div><div class="bartrack"><div class="bar b-prev" style="width:67.58%"><span>4,904</span></div><div class="bar b-curr" style="width:100.00%"><span>7,257</span></div></div></div>
+<div class="barrow"><div class="barlab">色情</div><div class="bartrack"><div class="bar b-prev" style="width:16.00%"><span>1,161</span></div><div class="bar b-curr" style="width:23.49%"><span>1,705</span></div></div></div>
+<div class="barrow"><div class="barlab">涉政</div><div class="bartrack"><div class="bar b-prev" style="width:3.83%"><span>278</span></div><div class="bar b-curr" style="width:8.53%"><span>619</span></div></div></div>
+<div class="barrow"><div class="barlab">广告</div><div class="bartrack"><div class="bar b-prev" style="width:2.34%"><span>170</span></div><div class="bar b-curr" style="width:3.10%"><span>225</span></div></div></div>
+<div class="barrow"><div class="barlab">暴恐</div><div class="bartrack"><div class="bar b-prev" style="width:0.06%"><span>4</span></div><div class="bar b-curr" style="width:0.11%"><span>8</span></div></div></div>
+  <h3>一级标签明细（按本周拒绝量降序）</h3>
+  <table>
+    <thead><tr><th>一级标签</th><th>上周</th><th>本周</th><th>环比</th><th>本周占比</th><th>增量</th><th>增量贡献</th></tr></thead>
+    <tbody><tr><td class="tl"><b>辱骂</b></td><td class="n">4,904</td><td class="n hi">7,257</td><td class="n"><span class="up">▲ +48.0%</span></td><td class="n">73.95%</td><td class="n">+2,353</td><td class="n">+71.4%</td></tr>
+<tr><td class="tl"><b>色情</b></td><td class="n">1,161</td><td class="n hi">1,705</td><td class="n"><span class="up">▲ +46.9%</span></td><td class="n">17.37%</td><td class="n">+544</td><td class="n">+16.5%</td></tr>
+<tr><td class="tl"><b>涉政</b></td><td class="n">278</td><td class="n hi">619</td><td class="n"><span class="up">▲ +122.7%</span></td><td class="n">6.31%</td><td class="n">+341</td><td class="n">+10.3%</td></tr>
+<tr><td class="tl"><b>广告</b></td><td class="n">170</td><td class="n hi">225</td><td class="n"><span class="up">▲ +32.4%</span></td><td class="n">2.29%</td><td class="n">+55</td><td class="n">+1.7%</td></tr>
+<tr><td class="tl"><b>暴恐</b></td><td class="n">4</td><td class="n hi">8</td><td class="n"><span class="up">▲ +100.0%</span></td><td class="n">0.08%</td><td class="n">+4</td><td class="n">+0.1%</td></tr></tbody>
+  </table>
+  <div class="verdict">
+    <b>结论：</b>辱骂 <b>7,257</b> 条（占 73.9%）仍占主体，
+    色情 1,705（+46.9%）。
+    <b>涉政 278 → 619（+122.7%）</b>是相对增幅最高的类目，
+    贡献 10.3% 增量，主因是「涉政:涉政」单项。
+  </div>
+</section>
+
+<section>
+  <div class="sec-h"><span class="sec-n">04</span><h2>二级标签拒绝量变化</h2></div>
+  <div class="sec-sub">辱骂子类占据前四；涉政:涉政 +271.8% 是本周最大单项异常</div>
+  <table>
+    <thead><tr><th>二级标签</th><th>上周</th><th>本周</th><th>环比</th><th>本周占比</th></tr></thead>
+    <tbody><tr><td class="tl">辱骂:不文明用语</td><td class="n">2,313</td><td class="n hi">3,297</td><td class="n"><span class="up">▲ +42.5%</span></td><td class="n">33.59%</td></tr>
+<tr><td class="tl">辱骂:人身攻击</td><td class="n">1,676</td><td class="n hi">2,522</td><td class="n"><span class="up">▲ +50.5%</span></td><td class="n">25.70%</td></tr>
+<tr><td class="tl">色情:性骚扰</td><td class="n">993</td><td class="n hi">1,434</td><td class="n"><span class="up">▲ +44.4%</span></td><td class="n">14.61%</td></tr>
+<tr><td class="tl">辱骂:人格侮辱</td><td class="n">876</td><td class="n hi">1,401</td><td class="n"><span class="up">▲ +59.9%</span></td><td class="n">14.28%</td></tr>
+<tr><td class="tl">涉政:涉政</td><td class="n">85</td><td class="n hi">316</td><td class="n"><span class="up">▲ +271.8%</span></td><td class="n">3.22%</td></tr>
+<tr><td class="tl">涉政:国家机构</td><td class="n">96</td><td class="n hi">162</td><td class="n"><span class="up">▲ +68.8%</span></td><td class="n">1.65%</td></tr>
+<tr><td class="tl">广告:联系方式</td><td class="n">110</td><td class="n hi">149</td><td class="n"><span class="up">▲ +35.5%</span></td><td class="n">1.52%</td></tr>
+<tr><td class="tl">色情:变态色情</td><td class="n">43</td><td class="n hi">73</td><td class="n"><span class="up">▲ +69.8%</span></td><td class="n">0.74%</td></tr>
+<tr><td class="tl">广告:广告</td><td class="n">53</td><td class="n hi">71</td><td class="n"><span class="up">▲ +34.0%</span></td><td class="n">0.72%</td></tr>
+<tr><td class="tl">色情:商品</td><td class="n">38</td><td class="n hi">68</td><td class="n"><span class="up">▲ +78.9%</span></td><td class="n">0.69%</td></tr>
+<tr><td class="tl">色情:SM</td><td class="n">36</td><td class="n hi">68</td><td class="n"><span class="up">▲ +88.9%</span></td><td class="n">0.69%</td></tr>
+<tr><td class="tl">涉政:种族主义</td><td class="n">49</td><td class="n hi">63</td><td class="n"><span class="up">▲ +28.6%</span></td><td class="n">0.64%</td></tr>
+<tr><td class="tl">辱骂:诅咒</td><td class="n">30</td><td class="n hi">28</td><td class="n"><span class="down">▼ -6.7%</span></td><td class="n">0.29%</td></tr>
+<tr><td class="tl">色情:情色三级</td><td class="n">16</td><td class="n hi">24</td><td class="n"><span class="up">▲ +50.0%</span></td><td class="n">0.24%</td></tr>
+<tr><td class="tl">涉政:党政军</td><td class="n">17</td><td class="n hi">22</td><td class="n"><span class="up">▲ +29.4%</span></td><td class="n">0.22%</td></tr>
+<tr><td class="tl">色情:性诱惑</td><td class="n">19</td><td class="n hi">17</td><td class="n"><span class="down">▼ -10.5%</span></td><td class="n">0.17%</td></tr>
+<tr><td class="tl">色情:色情描写</td><td class="n">8</td><td class="n hi">17</td><td class="n"><span class="up">▲ +112.5%</span></td><td class="n">0.17%</td></tr>
+<tr><td class="tl">涉政:一号领导</td><td class="n">5</td><td class="n hi">15</td><td class="n"><span class="up">▲ +200.0%</span></td><td class="n">0.15%</td></tr></tbody>
+  </table>
+  <div style="font-size:12.5px;color:var(--sub);margin-top:12px;line-height:1.75">
+    本周共 47 个二级标签，此处列示本周拒绝量 Top 18。
+    <b>本周归零的二级类目：</b>涉政:六四事件（1→0）；暴恐:恐怖组织（1→0）；涉政:国外领导人（1→0）；涉政:法轮功（1→0）；涉政:热点敏感（1→0）。
+  </div>
+  <div class="verdict">
+    <b>结论：</b>辱骂:不文明用语 3,297、
+    辱骂:人身攻击 2,522、
+    辱骂:人格侮辱 1,401 三项合计占
+    <b>73.6%</b>。
+    色情:性骚扰 1,434（+44.4%）。
+    <b>涉政:涉政 85 → 316（+271.8%）</b>为单项异常第一。
+  </div>
+</section>
+
+<section>
+  <div class="sec-h"><span class="sec-n">05</span><h2>三级标签明细</h2></div>
+  <div class="sec-sub">轻度类目主导；重度性骚扰六周累计 +226%，仍是唯一持续上升的真实风险线</div>
+  <div class="two">
+    <div>
+      <h3 style="margin-top:6px">三级标签 TOP 22（按本周拒绝量）</h3>
+      <div class="scroll"><table>
+        <thead><tr><th>三级标签</th><th>上周</th><th>本周</th><th>环比</th><th>占比</th></tr></thead>
+        <tbody><tr><td class="tl">辱骂:不文明用语:轻度不文明用语</td><td class="n">1,592</td><td class="n hi">2,275</td><td class="n"><span class="up">▲ +42.9%</span></td><td class="n">23.18%</td></tr>
+<tr><td class="tl">辱骂:人身攻击:轻度人身攻击</td><td class="n">1,450</td><td class="n hi">2,213</td><td class="n"><span class="up">▲ +52.6%</span></td><td class="n">22.55%</td></tr>
+<tr><td class="tl">色情:性骚扰:重度性骚扰</td><td class="n">809</td><td class="n hi">1,131</td><td class="n"><span class="up">▲ +39.8%</span></td><td class="n">11.52%</td></tr>
+<tr><td class="tl">辱骂:不文明用语:口头禅</td><td class="n">553</td><td class="n hi">827</td><td class="n"><span class="up">▲ +49.5%</span></td><td class="n">8.43%</td></tr>
+<tr><td class="tl">辱骂:人格侮辱:智力素质辱骂</td><td class="n">451</td><td class="n hi">736</td><td class="n"><span class="up">▲ +63.2%</span></td><td class="n">7.50%</td></tr>
+<tr><td class="tl">涉政:涉政:涉政</td><td class="n">85</td><td class="n hi">316</td><td class="n"><span class="up">▲ +271.8%</span></td><td class="n">3.22%</td></tr>
+<tr><td class="tl">辱骂:人身攻击:重度人身攻击</td><td class="n">226</td><td class="n hi">309</td><td class="n"><span class="up">▲ +36.7%</span></td><td class="n">3.15%</td></tr>
+<tr><td class="tl">辱骂:人格侮辱:污秽辱骂</td><td class="n">223</td><td class="n hi">301</td><td class="n"><span class="up">▲ +35.0%</span></td><td class="n">3.07%</td></tr>
+<tr><td class="tl">辱骂:不文明用语:重度色情粗口</td><td class="n">168</td><td class="n hi">195</td><td class="n"><span class="up">▲ +16.1%</span></td><td class="n">1.99%</td></tr>
+<tr><td class="tl">色情:性骚扰:影射性骚扰</td><td class="n">99</td><td class="n hi">175</td><td class="n"><span class="up">▲ +76.8%</span></td><td class="n">1.78%</td></tr>
+<tr><td class="tl">涉政:国家机构:国家机构</td><td class="n">96</td><td class="n hi">162</td><td class="n"><span class="up">▲ +68.8%</span></td><td class="n">1.65%</td></tr>
+<tr><td class="tl">辱骂:人格侮辱:外貌辱骂</td><td class="n">79</td><td class="n hi">137</td><td class="n"><span class="up">▲ +73.4%</span></td><td class="n">1.40%</td></tr>
+<tr><td class="tl">辱骂:人格侮辱:渣女辱骂</td><td class="n">76</td><td class="n hi">127</td><td class="n"><span class="up">▲ +67.1%</span></td><td class="n">1.29%</td></tr>
+<tr><td class="tl">辱骂:人格侮辱:动物类比辱骂</td><td class="n">47</td><td class="n hi">100</td><td class="n"><span class="up">▲ +112.8%</span></td><td class="n">1.02%</td></tr>
+<tr><td class="tl">广告:联系方式:疑似联系方式</td><td class="n">80</td><td class="n hi">78</td><td class="n"><span class="down">▼ -2.5%</span></td><td class="n">0.79%</td></tr>
+<tr><td class="tl">色情:变态色情:变态色情</td><td class="n">43</td><td class="n hi">73</td><td class="n"><span class="up">▲ +69.8%</span></td><td class="n">0.74%</td></tr>
+<tr><td class="tl">广告:广告:广告</td><td class="n">53</td><td class="n hi">71</td><td class="n"><span class="up">▲ +34.0%</span></td><td class="n">0.72%</td></tr>
+<tr><td class="tl">色情:商品:成人用品</td><td class="n">38</td><td class="n hi">68</td><td class="n"><span class="up">▲ +78.9%</span></td><td class="n">0.69%</td></tr>
+<tr><td class="tl">色情:SM:SM</td><td class="n">36</td><td class="n hi">68</td><td class="n"><span class="up">▲ +88.9%</span></td><td class="n">0.69%</td></tr>
+<tr><td class="tl">涉政:种族主义:黑人歧视</td><td class="n">49</td><td class="n hi">63</td><td class="n"><span class="up">▲ +28.6%</span></td><td class="n">0.64%</td></tr>
+<tr><td class="tl">广告:联系方式:网址</td><td class="n">20</td><td class="n hi">62</td><td class="n"><span class="up">▲ +210.0%</span></td><td class="n">0.63%</td></tr>
+<tr><td class="tl">色情:性骚扰:裸露骚扰</td><td class="n">22</td><td class="n hi">36</td><td class="n"><span class="up">▲ +63.6%</span></td><td class="n">0.37%</td></tr></tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 style="margin-top:6px">新增拦截面（上周 = 0，共 21 项 / 44 条）</h3>
+      <div class="scroll"><table>
+        <thead><tr><th>新增标签</th><th>本周拒绝</th><th>占比</th></tr></thead>
+        <tbody><tr><td class="tl">涉政:宗教:其他宗教</td><td class="n hi">6</td><td class="n">0.06%</td></tr><tr><td class="tl">色情:性骚扰:衣物类骚扰</td><td class="n hi">6</td><td class="n">0.06%</td></tr><tr><td class="tl">辱骂:色情粗口:性行为辱骂</td><td class="n hi">5</td><td class="n">0.05%</td></tr><tr><td class="tl">色情:色情描写:亲吻行为描写</td><td class="n hi">3</td><td class="n">0.03%</td></tr><tr><td class="tl">涉政:一号领导:一号领导其他关联人物</td><td class="n hi">3</td><td class="n">0.03%</td></tr><tr><td class="tl">暴恐:枪击事件:枪击事件</td><td class="n hi">2</td><td class="n">0.02%</td></tr><tr><td class="tl">涉政:反动分裂:人权组织</td><td class="n hi">2</td><td class="n">0.02%</td></tr><tr><td class="tl">涉政:核心领导:毛泽东</td><td class="n hi">2</td><td class="n">0.02%</td></tr><tr><td class="tl">涉政:国际关系:负面外交事件</td><td class="n hi">2</td><td class="n">0.02%</td></tr><tr><td class="tl">涉政:宗教:佛教</td><td class="n hi">2</td><td class="n">0.02%</td></tr><tr><td class="tl">涉政:一号领导:一号领导职务指代</td><td class="n hi">1</td><td class="n">0.01%</td></tr><tr><td class="tl">色情:性诱惑:贞操诱惑</td><td class="n hi">1</td><td class="n">0.01%</td></tr><tr><td class="tl">色情:性骚扰:性分泌物骚扰</td><td class="n hi">1</td><td class="n">0.01%</td></tr><tr><td class="tl">涉政:国内领导人:常委领导</td><td class="n hi">1</td><td class="n">0.01%</td></tr><tr><td class="tl">涉政:反动分裂:台独人物</td><td class="n hi">1</td><td class="n">0.01%</td></tr><tr><td class="tl">涉政:党政军:国家</td><td class="n hi">1</td><td class="n">0.01%</td></tr><tr><td class="tl">涉政:一号领导:包子影射</td><td class="n hi">1</td><td class="n">0.01%</td></tr><tr><td class="tl">涉政:邪教:邪教名称</td><td class="n hi">1</td><td class="n">0.01%</td></tr><tr><td class="tl">色情:色情描写:轻度色情描写</td><td class="n hi">1</td><td class="n">0.01%</td></tr><tr><td class="tl">暴恐:人体血腥:尸体血腥</td><td class="n hi">1</td><td class="n">0.01%</td></tr><tr><td class="tl">涉政:一号领导:修宪影射</td><td class="n hi">1</td><td class="n">0.01%</td></tr></tbody>
+      </table></div>
+    </div>
+  </div>
+  <div class="verdict">
+    <b>结论：</b>轻度不文明用语 1,592 → <b>2,275</b>（+42.9%），
+    轻度人身攻击 1,450 → <b>2,213</b>（+52.6%），
+    两类合计占 <b>45.7%</b>。
+    <b>色情:性骚扰:重度性骚扰 809 → 1,131（+39.8%）</b>，
+    六周连线 347 → 571 → 809 → 1,131，累计 <b>+226%</b>，
+    是唯一一条与策略无关、连续上行的真实风险线。
+  </div>
+</section>
+
+<section>
+  <div class="sec-h"><span class="sec-n">06</span><h2>核心结论与建议</h2></div>
+  <div class="sec-sub">总体结论 + 建议（按优先级）</div>
+  <h3 style="margin-top:6px">总体结论</h3>
+  <div class="verdict" style="margin-top:0">
+    本周拒绝数 6,517 → <b>9,814 条（+50.6%）</b>，拒绝率 <b>7.22%</b>。
+    增量 <b>98.7% 来自存量类目</b>，新增拦截面仅
+    1.3%，09.11 策略的扩容效应已完全消化。<br>
+    同期盘量 +38.5%、拒绝率仅上浮 0.58 个百分点，<b>增长主要来自盘子变大，而不是尺度收紧</b>。
+    需要单独盯的是<b>重度性骚扰（六周累计 +226%）</b>，
+    以及两项相对增幅超 200% 的尾部异常（涉政:涉政、联系方式:网址）。
+  </div>
+  <h3>可执行建议</h3>
+  <ol class="acts">
+    
+    <li><b>核查「涉政:涉政」85 → 316（+271.8%）的成因。</b>
+      是本周相对增幅最高的二级类目，占增量 7.0%。
+      需在 24h 内确认是<b>时政词条集中命中</b>还是<b>阈值调整</b>，两类成因处置方式完全不同。</li>
+    <li><b>继续抽检轻度类目误杀率。</b>轻度不文明 2,275 + 轻度人身攻击 2,213 +
+      口头禅 827 + 智力素质辱骂 736 = <b>6,051 条（占 61.7%）</b>，
+      天然贴着误杀边界，建议抽 200 条人工复核。</li>
+    <li><b>「色情:性骚扰:重度性骚扰」建专人跟踪。</b>1,131 条、占 11.5%，
+      六周累计 <b>+226%</b>，建议按剧集/语种/时段三维切分定位渗透源。</li>
+    <li><b>查「广告:联系方式:网址」20 → 62（+210.0%）的词条来源</b>，
+      48h 内向审核团队确认是否新增词条或新渠道引流。</li>
+    <li><b>「违禁:版权IP名称」连续多周拦截为 0</b>，配置疑似未挂载，建议技术团队确认。</li>
+  </ol>
+</section>
+
+<footer>
+  数据源：天净 · 文本风险原因排行（渠道=评论）· 2026.09.18–09.24 对比 2026.09.11–09.17　·　生成时间：2026-10-09<br>
+  09.11 提高审核风险标准后，策略与词库无任何改动；本报告基于下载报表，未做策略改动文档核验
+</footer>
+
+</div>
+</body>
+</html>
