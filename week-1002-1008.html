@@ -88,25 +88,26 @@ footer{text-align:center;color:var(--sub);font-size:12px;margin-top:36px}
 <style>
 .wknav{position:sticky;top:0;z-index:99;background:rgba(255,255,255,.94);
  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid #e3e6ea}
-.wknav-inner{max-width:1180px;margin:0 auto;padding:11px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.wknav-inner{max-width:1380px;margin:0 auto;padding:9px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .wknav-brand{font-size:13px;font-weight:800;letter-spacing:-.01em;color:#1a1d21;white-space:nowrap}
 .wknav-brand em{font-style:normal;color:#175cd3}
-.wknav-tabs{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap}
-.wk-tab{display:block;padding:7px 14px;border:1px solid #e3e6ea;border-radius:10px;background:#fff;
- text-decoration:none;color:#1a1d21;line-height:1.3;transition:all .14s}
+.wknav-tabs{display:flex;gap:6px;margin-left:auto;flex-wrap:nowrap;overflow-x:auto;
+ scrollbar-width:thin;padding-bottom:2px}
+.wknav-tabs::-webkit-scrollbar{height:5px}
+.wknav-tabs::-webkit-scrollbar-thumb{background:#d0d5dd;border-radius:3px}
+.wk-tab{display:block;padding:6px 9px;border:1px solid #e3e6ea;border-radius:9px;background:#fff;
+ text-decoration:none;color:#1a1d21;line-height:1.3;white-space:nowrap;transition:all .14s;flex:0 0 auto}
 .wk-tab:hover{border-color:#175cd3;background:#f7faff}
 .wk-tab.on{background:#175cd3;border-color:#175cd3;color:#fff;box-shadow:0 2px 8px rgba(23,92,211,.24)}
-.wk-tab .t{display:block;font-size:12.5px;font-weight:750;font-variant-numeric:tabular-nums}
-.wk-tab .d{display:block;font-size:10.5px;color:#666e7a;margin-top:1px}
-.wk-tab.on .d{color:#cfe1ff}
+.wk-tab .t{display:block;font-size:12px;font-weight:700;font-variant-numeric:tabular-nums}
 .wk-badge{display:inline-block;font-size:9.5px;font-weight:800;padding:1px 5px;border-radius:4px;
- background:#ecfdf3;color:#067647;margin-left:6px;vertical-align:1px}
+ background:#ecfdf3;color:#067647;margin-left:5px;vertical-align:1px}
 .wk-tab.on .wk-badge{background:rgba(255,255,255,.24);color:#fff}
-@media(max-width:880px){.wknav-tabs{margin-left:0;width:100%}.wk-tab{flex:1;text-align:center}}
+@media(max-width:880px){.wknav-tabs{margin-left:0;width:100%}}
 </style>
 </head>
 <body>
-<div class="wknav"><div class="wknav-inner"><div class="wknav-brand">DramaBox <em>·</em> 集评审核风险周报</div><div class="wknav-tabs"><a class="wk-tab" href="index.html"><span class="t">11.20–11.26<span class="wk-badge">最新</span></span><span class="d">14,133 条 · 拒绝率 7.24%</span></a><a class="wk-tab" href="week-1113-1119.html"><span class="t">11.13–11.19</span><span class="d">14,505 条 · 拒绝率 7.36%</span></a><a class="wk-tab" href="week-1106-1112.html"><span class="t">11.06–11.12</span><span class="d">14,020 条 · 拒绝率 7.08%</span></a><a class="wk-tab" href="week-1030-1105.html"><span class="t">10.30–11.05</span><span class="d">11,852 条 · 拒绝率 5.99%</span></a><a class="wk-tab" href="week-1023-1029.html"><span class="t">10.23–10.29</span><span class="d">12,418 条 · 拒绝率 6.80%</span></a><a class="wk-tab" href="week-1016-1022.html"><span class="t">10.16–10.22</span><span class="d">12,182 条 · 拒绝率 6.88%</span></a><a class="wk-tab" href="week-1009-1015.html"><span class="t">10.09–10.15</span><span class="d">12,707 条 · 拒绝率 7.26%</span></a><a class="wk-tab on" href="week-1002-1008.html"><span class="t">10.02–10.08</span><span class="d">11,875 条 · 拒绝率 7.30%</span></a><a class="wk-tab" href="week-0925-1001.html"><span class="t">9.25–10.01</span><span class="d">7,880 条 · 拒绝率 4.81%</span></a><a class="wk-tab" href="week-0918-0924.html"><span class="t">9.18–9.24</span><span class="d">9,814 条 · 拒绝率 7.22%</span></a><a class="wk-tab" href="week-0911-0917.html"><span class="t">9.11–9.17</span><span class="d">6,517 条 · 拒绝率 6.64%</span></a><a class="wk-tab" href="week-0904-0910.html"><span class="t">9.04–9.10</span><span class="d">1,611 条 · 拒绝率 2.20%</span></a><a class="wk-tab" href="week-0828-0903.html"><span class="t">8.28–9.03</span><span class="d">1,032 条 · 拒绝率 未知</span></a></div></div></div>
+<div class="wknav"><div class="wknav-inner"><div class="wknav-brand">DramaBox <em>·</em> 集评审核风险周报</div><div class="wknav-tabs"><a class="wk-tab" href="index.html" title="11.20–11.26　14,133 条 · 拒绝率 7.24%"><span class="t">11.20–11.26<span class="wk-badge">最新</span></span></a><a class="wk-tab" href="week-1113-1119.html" title="11.13–11.19　14,505 条 · 拒绝率 7.36%"><span class="t">11.13–11.19</span></a><a class="wk-tab" href="week-1106-1112.html" title="11.06–11.12　14,020 条 · 拒绝率 7.08%"><span class="t">11.06–11.12</span></a><a class="wk-tab" href="week-1030-1105.html" title="10.30–11.05　11,852 条 · 拒绝率 5.99%"><span class="t">10.30–11.05</span></a><a class="wk-tab" href="week-1023-1029.html" title="10.23–10.29　12,418 条 · 拒绝率 6.80%"><span class="t">10.23–10.29</span></a><a class="wk-tab" href="week-1016-1022.html" title="10.16–10.22　12,182 条 · 拒绝率 6.88%"><span class="t">10.16–10.22</span></a><a class="wk-tab" href="week-1009-1015.html" title="10.09–10.15　12,707 条 · 拒绝率 7.26%"><span class="t">10.09–10.15</span></a><a class="wk-tab on" href="week-1002-1008.html" title="10.02–10.08　11,875 条 · 拒绝率 7.30%"><span class="t">10.02–10.08</span></a><a class="wk-tab" href="week-0925-1001.html" title="9.25–10.01　7,880 条 · 拒绝率 4.81%"><span class="t">9.25–10.01</span></a><a class="wk-tab" href="week-0918-0924.html" title="9.18–9.24　9,814 条 · 拒绝率 7.22%"><span class="t">9.18–9.24</span></a><a class="wk-tab" href="week-0911-0917.html" title="9.11–9.17　6,517 条 · 拒绝率 6.64%"><span class="t">9.11–9.17</span></a><a class="wk-tab" href="week-0904-0910.html" title="9.04–9.10　1,611 条 · 拒绝率 2.20%"><span class="t">9.04–9.10</span></a><a class="wk-tab" href="week-0828-0903.html" title="8.28–9.03　1,032 条 · 拒绝率 未知"><span class="t">8.28–9.03</span></a></div></div></div>
 <div class="wrap">
 
 <header>
@@ -118,7 +119,7 @@ footer{text-align:center;color:var(--sub);font-size:12px;margin-top:36px}
     <span class="chip">拒绝总数 11,875 条</span>
     <span class="chip">集评总量 162,700 条 · 拒绝率 7.30%</span>
     <span class="chip">三级标签 97 个</span>
-    <span class="chip">近四周无策略改动</span>
+    <span class="chip">近期无策略改动</span>
   </div>
 </header>
 
@@ -168,19 +169,19 @@ footer{text-align:center;color:var(--sub);font-size:12px;margin-top:36px}
 <section>
   <div class="sec-h"><span class="sec-n">01</span><h2>整体概览：13 周走势定位</h2></div>
   <div class="sec-sub">拒绝 7,880 → 11,875（+50.7%）创六周新高；盘量持平，涨幅全部来自拒绝率回升</div>
-  <div class="charts"><div class="tcol"><div class="tval" style="color:#667085">1,032</div><div class="tbar" style="height:14px;background:#98a2b3"></div><div class="tlab" style="font-weight:500">8.28–9.03</div></div>
-<div class="tcol"><div class="tval" style="color:#667085">1,611</div><div class="tbar" style="height:22px;background:#98a2b3"></div><div class="tlab" style="font-weight:500">9.04–9.10</div></div>
-<div class="tcol"><div class="tval" style="color:#667085">6,517</div><div class="tbar" style="height:90px;background:#98a2b3"></div><div class="tlab" style="font-weight:500">9.11–9.17</div></div>
-<div class="tcol"><div class="tval" style="color:#667085">9,814</div><div class="tbar" style="height:135px;background:#98a2b3"></div><div class="tlab" style="font-weight:500">9.18–9.24</div></div>
-<div class="tcol"><div class="tval" style="color:#667085">7,880</div><div class="tbar" style="height:109px;background:#98a2b3"></div><div class="tlab" style="font-weight:500">9.25–10.01</div></div>
-<div class="tcol"><div class="tval" style="color:#667085">11,875</div><div class="tbar" style="height:164px;background:#98a2b3"></div><div class="tlab" style="font-weight:500">10.02–10.08</div></div>
-<div class="tcol"><div class="tval" style="color:#667085">12,707</div><div class="tbar" style="height:175px;background:#98a2b3"></div><div class="tlab" style="font-weight:500">10.09–10.15</div></div>
-<div class="tcol"><div class="tval" style="color:#667085">12,182</div><div class="tbar" style="height:168px;background:#98a2b3"></div><div class="tlab" style="font-weight:500">10.16–10.22</div></div>
-<div class="tcol"><div class="tval" style="color:#667085">12,418</div><div class="tbar" style="height:171px;background:#98a2b3"></div><div class="tlab" style="font-weight:500">10.23–10.29</div></div>
-<div class="tcol"><div class="tval" style="color:#667085">11,852</div><div class="tbar" style="height:163px;background:#98a2b3"></div><div class="tlab" style="font-weight:500">10.30–11.05</div></div>
-<div class="tcol"><div class="tval" style="color:#667085">14,020</div><div class="tbar" style="height:193px;background:#98a2b3"></div><div class="tlab" style="font-weight:500">11.06–11.12</div></div>
-<div class="tcol"><div class="tval" style="color:#667085">14,505</div><div class="tbar" style="height:200px;background:#98a2b3"></div><div class="tlab" style="font-weight:500">11.13–11.19</div></div>
-<div class="tcol"><div class="tval" style="color:#175cd3">14,133</div><div class="tbar" style="height:195px;background:#175cd3"></div><div class="tlab" style="font-weight:800">11.20–11.26</div></div></div>
+  <div class="charts" style="gap:12px;flex-wrap:nowrap;overflow-x:auto;padding-bottom:8px"><div class="tcol" title="8.28–9.03　1,032 条"><div class="tval" style="color:#667085;font-size:10.5px;letter-spacing:-.02em">1,032</div><div class="tbar" style="height:14px;width:30px;background:#98a2b3"></div><div class="tlab" style="font-weight:600;font-size:10px;white-space:nowrap">8/28</div></div>
+<div class="tcol" title="9.04–9.10　1,611 条"><div class="tval" style="color:#667085;font-size:10.5px;letter-spacing:-.02em">1,611</div><div class="tbar" style="height:22px;width:30px;background:#98a2b3"></div><div class="tlab" style="font-weight:600;font-size:10px;white-space:nowrap">9/4</div></div>
+<div class="tcol" title="9.11–9.17　6,517 条"><div class="tval" style="color:#667085;font-size:10.5px;letter-spacing:-.02em">6,517</div><div class="tbar" style="height:90px;width:30px;background:#98a2b3"></div><div class="tlab" style="font-weight:600;font-size:10px;white-space:nowrap">9/11</div></div>
+<div class="tcol" title="9.18–9.24　9,814 条"><div class="tval" style="color:#667085;font-size:10.5px;letter-spacing:-.02em">9,814</div><div class="tbar" style="height:135px;width:30px;background:#98a2b3"></div><div class="tlab" style="font-weight:600;font-size:10px;white-space:nowrap">9/18</div></div>
+<div class="tcol" title="9.25–10.01　7,880 条"><div class="tval" style="color:#667085;font-size:10.5px;letter-spacing:-.02em">7,880</div><div class="tbar" style="height:109px;width:30px;background:#98a2b3"></div><div class="tlab" style="font-weight:600;font-size:10px;white-space:nowrap">9/25</div></div>
+<div class="tcol" title="10.02–10.08　11,875 条"><div class="tval" style="color:#667085;font-size:10.5px;letter-spacing:-.02em">11,875</div><div class="tbar" style="height:164px;width:30px;background:#98a2b3"></div><div class="tlab" style="font-weight:600;font-size:10px;white-space:nowrap">10/2</div></div>
+<div class="tcol" title="10.09–10.15　12,707 条"><div class="tval" style="color:#667085;font-size:10.5px;letter-spacing:-.02em">12,707</div><div class="tbar" style="height:175px;width:30px;background:#98a2b3"></div><div class="tlab" style="font-weight:600;font-size:10px;white-space:nowrap">10/9</div></div>
+<div class="tcol" title="10.16–10.22　12,182 条"><div class="tval" style="color:#667085;font-size:10.5px;letter-spacing:-.02em">12,182</div><div class="tbar" style="height:168px;width:30px;background:#98a2b3"></div><div class="tlab" style="font-weight:600;font-size:10px;white-space:nowrap">10/16</div></div>
+<div class="tcol" title="10.23–10.29　12,418 条"><div class="tval" style="color:#667085;font-size:10.5px;letter-spacing:-.02em">12,418</div><div class="tbar" style="height:171px;width:30px;background:#98a2b3"></div><div class="tlab" style="font-weight:600;font-size:10px;white-space:nowrap">10/23</div></div>
+<div class="tcol" title="10.30–11.05　11,852 条"><div class="tval" style="color:#667085;font-size:10.5px;letter-spacing:-.02em">11,852</div><div class="tbar" style="height:163px;width:30px;background:#98a2b3"></div><div class="tlab" style="font-weight:600;font-size:10px;white-space:nowrap">10/30</div></div>
+<div class="tcol" title="11.06–11.12　14,020 条"><div class="tval" style="color:#667085;font-size:10.5px;letter-spacing:-.02em">14,020</div><div class="tbar" style="height:193px;width:30px;background:#98a2b3"></div><div class="tlab" style="font-weight:600;font-size:10px;white-space:nowrap">11/6</div></div>
+<div class="tcol" title="11.13–11.19　14,505 条"><div class="tval" style="color:#667085;font-size:10.5px;letter-spacing:-.02em">14,505</div><div class="tbar" style="height:200px;width:30px;background:#98a2b3"></div><div class="tlab" style="font-weight:600;font-size:10px;white-space:nowrap">11/13</div></div>
+<div class="tcol" title="11.20–11.26　14,133 条"><div class="tval" style="color:#175cd3;font-size:10.5px;letter-spacing:-.02em">14,133</div><div class="tbar" style="height:195px;width:30px;background:#175cd3"></div><div class="tlab" style="font-weight:800;font-size:10px;white-space:nowrap">11/20</div></div></div>
   <div class="legend">
     <span><i style="background:#98a2b3"></i>其他周</span>
     
@@ -188,20 +189,20 @@ footer{text-align:center;color:var(--sub);font-size:12px;margin-top:36px}
   </div>
   <h3>13 周拒绝数与拒绝率</h3>
   <table>
-    <thead><tr><th>周次</th><th>拒绝数</th><th>盘量</th><th>拒绝率</th><th>环比</th></tr></thead>
-    <tbody><tr><td class="tl"><b>8.28–9.03</b></td><td class="n hi">1,032</td><td class="n">未知</td><td class="n">未知</td><td class="n">—</td></tr>
-<tr><td class="tl"><b>9.04–9.10</b></td><td class="n hi">1,611</td><td class="n">73,381</td><td class="n">2.20%</td><td class="n"><span class="up">+56.1%</span></td></tr>
-<tr><td class="tl"><b>9.11–9.17</b></td><td class="n hi">6,517</td><td class="n">98,201</td><td class="n">6.64%</td><td class="n"><span class="up">+304.5%</span></td></tr>
-<tr><td class="tl"><b>9.18–9.24</b></td><td class="n hi">9,814</td><td class="n">136,000</td><td class="n">7.22%</td><td class="n"><span class="up">+50.6%</span></td></tr>
-<tr><td class="tl"><b>9.25–10.01</b></td><td class="n hi">7,880</td><td class="n">163,800</td><td class="n">4.81%</td><td class="n"><span class="down">-19.7%</span></td></tr>
-<tr style="background:#f5f8ff"><td class="tl"><b>10.02–10.08</b></td><td class="n hi">11,875</td><td class="n">162,700</td><td class="n">7.30%</td><td class="n"><span class="up">+50.7%</span></td></tr>
-<tr><td class="tl"><b>10.09–10.15</b></td><td class="n hi">12,707</td><td class="n">175,000</td><td class="n">7.26%</td><td class="n"><span class="up">+7.0%</span></td></tr>
-<tr><td class="tl"><b>10.16–10.22</b></td><td class="n hi">12,182</td><td class="n">177,100</td><td class="n">6.88%</td><td class="n"><span class="down">-4.1%</span></td></tr>
-<tr><td class="tl"><b>10.23–10.29</b></td><td class="n hi">12,418</td><td class="n">182,500</td><td class="n">6.80%</td><td class="n"><span class="up">+1.9%</span></td></tr>
-<tr><td class="tl"><b>10.30–11.05</b></td><td class="n hi">11,852</td><td class="n">197,700</td><td class="n">5.99%</td><td class="n"><span class="down">-4.6%</span></td></tr>
-<tr><td class="tl"><b>11.06–11.12</b></td><td class="n hi">14,020</td><td class="n">198,100</td><td class="n">7.08%</td><td class="n"><span class="up">+18.3%</span></td></tr>
-<tr><td class="tl"><b>11.13–11.19</b></td><td class="n hi">14,505</td><td class="n">197,200</td><td class="n">7.36%</td><td class="n"><span class="up">+3.5%</span></td></tr>
-<tr><td class="tl"><b>11.20–11.26</b></td><td class="n hi">14,133</td><td class="n">195,200</td><td class="n">7.24%</td><td class="n"><span class="down">-2.6%</span></td></tr></tbody>
+    <thead><tr><th>周次</th><th>拒绝数</th><th>量级</th><th>盘量</th><th>拒绝率</th><th>环比</th></tr></thead>
+    <tbody><tr><td class="tl"><b>8.28–9.03</b></td><td class="n hi">1,032</td><td><div style="height:11px;border-radius:6px;min-width:2px;background:#cbd5e1;width:9px"></div></td><td class="n">未知</td><td class="n">未知</td><td class="n">—</td></tr>
+<tr><td class="tl"><b>9.04–9.10</b></td><td class="n hi">1,611</td><td><div style="height:11px;border-radius:6px;min-width:2px;background:#cbd5e1;width:13px"></div></td><td class="n">73,381</td><td class="n">2.20%</td><td class="n"><span class="up">+56.1%</span></td></tr>
+<tr><td class="tl"><b>9.11–9.17</b></td><td class="n hi">6,517</td><td><div style="height:11px;border-radius:6px;min-width:2px;background:#cbd5e1;width:54px"></div></td><td class="n">98,201</td><td class="n">6.64%</td><td class="n"><span class="up">+304.5%</span></td></tr>
+<tr><td class="tl"><b>9.18–9.24</b></td><td class="n hi">9,814</td><td><div style="height:11px;border-radius:6px;min-width:2px;background:#cbd5e1;width:81px"></div></td><td class="n">136,000</td><td class="n">7.22%</td><td class="n"><span class="up">+50.6%</span></td></tr>
+<tr><td class="tl"><b>9.25–10.01</b></td><td class="n hi">7,880</td><td><div style="height:11px;border-radius:6px;min-width:2px;background:#cbd5e1;width:65px"></div></td><td class="n">163,800</td><td class="n">4.81%</td><td class="n"><span class="down">-19.7%</span></td></tr>
+<tr style="background:#f5f8ff"><td class="tl"><b>10.02–10.08</b></td><td class="n hi">11,875</td><td><div style="height:11px;border-radius:6px;min-width:2px;background:linear-gradient(90deg,#60a5fa,#175cd3);width:98px"></div></td><td class="n">162,700</td><td class="n">7.30%</td><td class="n"><span class="up">+50.7%</span></td></tr>
+<tr><td class="tl"><b>10.09–10.15</b></td><td class="n hi">12,707</td><td><div style="height:11px;border-radius:6px;min-width:2px;background:#cbd5e1;width:105px"></div></td><td class="n">175,000</td><td class="n">7.26%</td><td class="n"><span class="up">+7.0%</span></td></tr>
+<tr><td class="tl"><b>10.16–10.22</b></td><td class="n hi">12,182</td><td><div style="height:11px;border-radius:6px;min-width:2px;background:#cbd5e1;width:101px"></div></td><td class="n">177,100</td><td class="n">6.88%</td><td class="n"><span class="down">-4.1%</span></td></tr>
+<tr><td class="tl"><b>10.23–10.29</b></td><td class="n hi">12,418</td><td><div style="height:11px;border-radius:6px;min-width:2px;background:#cbd5e1;width:103px"></div></td><td class="n">182,500</td><td class="n">6.80%</td><td class="n"><span class="up">+1.9%</span></td></tr>
+<tr><td class="tl"><b>10.30–11.05</b></td><td class="n hi">11,852</td><td><div style="height:11px;border-radius:6px;min-width:2px;background:#cbd5e1;width:98px"></div></td><td class="n">197,700</td><td class="n">5.99%</td><td class="n"><span class="down">-4.6%</span></td></tr>
+<tr><td class="tl"><b>11.06–11.12</b></td><td class="n hi">14,020</td><td><div style="height:11px;border-radius:6px;min-width:2px;background:#cbd5e1;width:116px"></div></td><td class="n">198,100</td><td class="n">7.08%</td><td class="n"><span class="up">+18.3%</span></td></tr>
+<tr><td class="tl"><b>11.13–11.19</b></td><td class="n hi">14,505</td><td><div style="height:11px;border-radius:6px;min-width:2px;background:#cbd5e1;width:120px"></div></td><td class="n">197,200</td><td class="n">7.36%</td><td class="n"><span class="up">+3.5%</span></td></tr>
+<tr><td class="tl"><b>11.20–11.26</b></td><td class="n hi">14,133</td><td><div style="height:11px;border-radius:6px;min-width:2px;background:#cbd5e1;width:117px"></div></td><td class="n">195,200</td><td class="n">7.24%</td><td class="n"><span class="down">-2.6%</span></td></tr></tbody>
   </table>
   <div class="verdict">
     <b>结论：</b>六周走势 1,032 → 1,611 → 6,517 → 9,814 →
@@ -375,8 +376,8 @@ footer{text-align:center;color:var(--sub);font-size:12px;margin-top:36px}
 </section>
 
 <footer>
-  数据源：天净 · 文本风险原因排行（渠道=评论）· 2026.10.02–10.08 对比 2026.09.25–10.01　·　生成时间：2026-10-23<br>
-  近六周策略与词库无任何改动，故不再单列策略观测；本报告基于下载报表，未做策略改动文档核验
+  数据源：天净 · 文本风险原因排行（渠道=评论）· 2026.10.02–10.08 对比 2026.09.25–10.01　·　生成时间：2026-11-27<br>
+  近期策略与词库无任何改动，故不再单列策略观测；本报告基于下载报表，未做策略改动文档核验
 </footer>
 
 </div>

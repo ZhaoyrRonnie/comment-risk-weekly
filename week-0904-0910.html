@@ -88,25 +88,26 @@ footer{text-align:center;color:var(--sub);font-size:12px;margin-top:36px}
 <style>
 .wknav{position:sticky;top:0;z-index:99;background:rgba(255,255,255,.94);
  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid #e3e6ea}
-.wknav-inner{max-width:1180px;margin:0 auto;padding:11px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.wknav-inner{max-width:1380px;margin:0 auto;padding:9px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .wknav-brand{font-size:13px;font-weight:800;letter-spacing:-.01em;color:#1a1d21;white-space:nowrap}
 .wknav-brand em{font-style:normal;color:#175cd3}
-.wknav-tabs{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap}
-.wk-tab{display:block;padding:7px 14px;border:1px solid #e3e6ea;border-radius:10px;background:#fff;
- text-decoration:none;color:#1a1d21;line-height:1.3;transition:all .14s}
+.wknav-tabs{display:flex;gap:6px;margin-left:auto;flex-wrap:nowrap;overflow-x:auto;
+ scrollbar-width:thin;padding-bottom:2px}
+.wknav-tabs::-webkit-scrollbar{height:5px}
+.wknav-tabs::-webkit-scrollbar-thumb{background:#d0d5dd;border-radius:3px}
+.wk-tab{display:block;padding:6px 9px;border:1px solid #e3e6ea;border-radius:9px;background:#fff;
+ text-decoration:none;color:#1a1d21;line-height:1.3;white-space:nowrap;transition:all .14s;flex:0 0 auto}
 .wk-tab:hover{border-color:#175cd3;background:#f7faff}
 .wk-tab.on{background:#175cd3;border-color:#175cd3;color:#fff;box-shadow:0 2px 8px rgba(23,92,211,.24)}
-.wk-tab .t{display:block;font-size:12.5px;font-weight:750;font-variant-numeric:tabular-nums}
-.wk-tab .d{display:block;font-size:10.5px;color:#666e7a;margin-top:1px}
-.wk-tab.on .d{color:#cfe1ff}
+.wk-tab .t{display:block;font-size:12px;font-weight:700;font-variant-numeric:tabular-nums}
 .wk-badge{display:inline-block;font-size:9.5px;font-weight:800;padding:1px 5px;border-radius:4px;
- background:#ecfdf3;color:#067647;margin-left:6px;vertical-align:1px}
+ background:#ecfdf3;color:#067647;margin-left:5px;vertical-align:1px}
 .wk-tab.on .wk-badge{background:rgba(255,255,255,.24);color:#fff}
-@media(max-width:880px){.wknav-tabs{margin-left:0;width:100%}.wk-tab{flex:1;text-align:center}}
+@media(max-width:880px){.wknav-tabs{margin-left:0;width:100%}}
 </style>
 </head>
 <body>
-<div class="wknav"><div class="wknav-inner"><div class="wknav-brand">DramaBox <em>·</em> 集评审核风险周报</div><div class="wknav-tabs"><a class="wk-tab" href="index.html"><span class="t">11.20–11.26<span class="wk-badge">最新</span></span><span class="d">14,133 条 · 拒绝率 7.24%</span></a><a class="wk-tab" href="week-1113-1119.html"><span class="t">11.13–11.19</span><span class="d">14,505 条 · 拒绝率 7.36%</span></a><a class="wk-tab" href="week-1106-1112.html"><span class="t">11.06–11.12</span><span class="d">14,020 条 · 拒绝率 7.08%</span></a><a class="wk-tab" href="week-1030-1105.html"><span class="t">10.30–11.05</span><span class="d">11,852 条 · 拒绝率 5.99%</span></a><a class="wk-tab" href="week-1023-1029.html"><span class="t">10.23–10.29</span><span class="d">12,418 条 · 拒绝率 6.80%</span></a><a class="wk-tab" href="week-1016-1022.html"><span class="t">10.16–10.22</span><span class="d">12,182 条 · 拒绝率 6.88%</span></a><a class="wk-tab" href="week-1009-1015.html"><span class="t">10.09–10.15</span><span class="d">12,707 条 · 拒绝率 7.26%</span></a><a class="wk-tab" href="week-1002-1008.html"><span class="t">10.02–10.08</span><span class="d">11,875 条 · 拒绝率 7.30%</span></a><a class="wk-tab" href="week-0925-1001.html"><span class="t">9.25–10.01</span><span class="d">7,880 条 · 拒绝率 4.81%</span></a><a class="wk-tab" href="week-0918-0924.html"><span class="t">9.18–9.24</span><span class="d">9,814 条 · 拒绝率 7.22%</span></a><a class="wk-tab" href="week-0911-0917.html"><span class="t">9.11–9.17</span><span class="d">6,517 条 · 拒绝率 6.64%</span></a><a class="wk-tab on" href="week-0904-0910.html"><span class="t">9.04–9.10</span><span class="d">1,611 条 · 拒绝率 2.20%</span></a><a class="wk-tab" href="week-0828-0903.html"><span class="t">8.28–9.03</span><span class="d">1,032 条 · 拒绝率 未知</span></a></div></div></div>
+<div class="wknav"><div class="wknav-inner"><div class="wknav-brand">DramaBox <em>·</em> 集评审核风险周报</div><div class="wknav-tabs"><a class="wk-tab" href="index.html" title="11.20–11.26　14,133 条 · 拒绝率 7.24%"><span class="t">11.20–11.26<span class="wk-badge">最新</span></span></a><a class="wk-tab" href="week-1113-1119.html" title="11.13–11.19　14,505 条 · 拒绝率 7.36%"><span class="t">11.13–11.19</span></a><a class="wk-tab" href="week-1106-1112.html" title="11.06–11.12　14,020 条 · 拒绝率 7.08%"><span class="t">11.06–11.12</span></a><a class="wk-tab" href="week-1030-1105.html" title="10.30–11.05　11,852 条 · 拒绝率 5.99%"><span class="t">10.30–11.05</span></a><a class="wk-tab" href="week-1023-1029.html" title="10.23–10.29　12,418 条 · 拒绝率 6.80%"><span class="t">10.23–10.29</span></a><a class="wk-tab" href="week-1016-1022.html" title="10.16–10.22　12,182 条 · 拒绝率 6.88%"><span class="t">10.16–10.22</span></a><a class="wk-tab" href="week-1009-1015.html" title="10.09–10.15　12,707 条 · 拒绝率 7.26%"><span class="t">10.09–10.15</span></a><a class="wk-tab" href="week-1002-1008.html" title="10.02–10.08　11,875 条 · 拒绝率 7.30%"><span class="t">10.02–10.08</span></a><a class="wk-tab" href="week-0925-1001.html" title="9.25–10.01　7,880 条 · 拒绝率 4.81%"><span class="t">9.25–10.01</span></a><a class="wk-tab" href="week-0918-0924.html" title="9.18–9.24　9,814 条 · 拒绝率 7.22%"><span class="t">9.18–9.24</span></a><a class="wk-tab" href="week-0911-0917.html" title="9.11–9.17　6,517 条 · 拒绝率 6.64%"><span class="t">9.11–9.17</span></a><a class="wk-tab on" href="week-0904-0910.html" title="9.04–9.10　1,611 条 · 拒绝率 2.20%"><span class="t">9.04–9.10</span></a><a class="wk-tab" href="week-0828-0903.html" title="8.28–9.03　1,032 条 · 拒绝率 未知"><span class="t">8.28–9.03</span></a></div></div></div>
 <div class="wrap">
 
 <header>
